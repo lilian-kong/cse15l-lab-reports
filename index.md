@@ -2,7 +2,7 @@
 # subtitle
 # subsubtitle hahah
 normal text!! hello
-*italics~*
+*italics~*\\
 **b o l d**
 `inline code` and normal text
 ```
