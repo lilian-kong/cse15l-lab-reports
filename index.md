@@ -12,7 +12,6 @@ list of font types!
 * **b o l d**
 1. one
 2. two
-3. three
 
 
 horizontal break
