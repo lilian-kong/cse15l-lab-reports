@@ -16,9 +16,10 @@ Because there was no mechanism to catch the situation (missing brackets or paran
 ![image1](https://cdn.discordapp.com/attachments/808427673960972298/967970243785932871/Screen_Shot_2022-04-24_at_7.08.07_PM.png)
 These are the changes I made to the code.
 
-The test file that prompted me to make this change is [new-test](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-file6.md
+The test file that prompted me to make this change is [test-file6](https://github.com/nidhidhamnani/markdownparser/blob/main/test-file6.md)
 
-The symptom of the failure-inducing input was the output ![image2](https://cdn.discordapp.com/attachments/808427673960972298/968001291450187776/Screen_Shot_2022-04-24_at_9.11.27_PM.png)
+The symptom of the failure-inducing input was the output 
+`[page.com]`
 The correct output should have been an empty list, because images are not the same thing as links.
 
 The bug in the original code is that there isn't a mechanism to detect the difference between a link and an image. As a result, the input file with an image was registered as a link by the code (because an image has the same format as a link but there is an exclamation point infront). 
@@ -30,7 +31,8 @@ These are the changes I made to the code.
 
 The test file that prompted me to make this change is [test-file8](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-file8.md).
 
-The symptom of the failure-inducing input was the output ![image2](https://cdn.discordapp.com/attachments/808427673960972298/967963909015359508/Screen_Shot_2022-04-24_at_6.42.55_PM.png)
+The symptom of the failure-inducing input was the output
+`[a link on the first line]`
 Based on the original Markdown file, the input given should not have resulted in a valid link, and therefore the output should have been an empty list.
 
 The bug in the previous version of the code is that it didn't require anything in the brackets when checking the "template" for a valid link. As a result, test-file8 being run through the program resulted in the symptom of something being counted as a link when it really wasn't. 
