@@ -16,7 +16,7 @@ Because there was no mechanism to catch the situation (missing brackets or paran
 ![image1](https://cdn.discordapp.com/attachments/808427673960972298/967970243785932871/Screen_Shot_2022-04-24_at_7.08.07_PM.png)
 These are the changes I made to the code.
 
-The test file that prompted me to make this change is [test-file6](https://github.com/nidhidhamnani/markdownparser/blob/main/test-file6.md)
+The test file that prompted me to make this change is [test-file6](https://github.com/nidhidhamnani/markdown-parser/blob/main/test-file6.md)
 
 The symptom of the failure-inducing input was the output 
 `[page.com]`
