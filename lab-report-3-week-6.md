@@ -1,6 +1,7 @@
 # Lab Report 3 Week 6
 ## Streamlining `ssh` Configuration
 ![image](https://cdn.discordapp.com/attachments/808427673960972298/973052875083231282/unknown.png)
+
 This is my `.ssh/config` file, and how I editted it
 ![image2](https://cdn.discordapp.com/attachments/808427673960972298/973052944763199548/unknown.png) 
 I was then able to run `ssh` without having to type my entire username. 
