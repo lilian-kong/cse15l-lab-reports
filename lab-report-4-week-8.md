@@ -26,9 +26,22 @@ Based on the output from the CommonMark demo site, the output should be
 ```
 ![image](https://cdn.discordapp.com/attachments/808427673960972298/977381651350966312/unknown.png)
 
-This is the JUnit test I wrote (for both implementations) to test for Snippet 1. 
+This is the JUnit test I wrote (for both implementations) to test for Snippet 2. 
 - for my implementation, the test failed ![image](https://cdn.discordapp.com/attachments/808427673960972298/977381977634254869/unknown.png)
 - for their implementation, the test failed ![image](https://cdn.discordapp.com/attachments/808427673960972298/977382198598574090/unknown.png)
 
 To fix this bug, I would have to add code that kept track of how many paired brackets and parentheses have been counted, and only return what is in the final paired set. The implementation from week 8 would be helpful to look at and apply to each individual case. For nest brackets, the potential link would start at the first paired set of brackets, and if that one isn't valid, move back to a previous one. This might be able to be done with an ArrayList of potential opening brackets and a loop that iterates starting from the end that breaks when it finds a valid one. The nested parentheses is solved with the implementation given in the week 8 lab. Escaped brackets can be caught with something that checks if the character immediately preceding the open or closed bracket is a backslash, and if so invalidate it as a potential open bracket (put an in statement that only allows the index of openBracket or closeBracket to be changed if the previous character is not backslash).
 ## Snippet 3
+![image](https://cdn.discordapp.com/attachments/808427673960972298/977396832936284210/unknown.png)
+
+Based on the output from the CommonMark demo site, the output should be 
+```
+["this title text is really long and takes up more than one line"]
+```
+![image](https://cdn.discordapp.com/attachments/808427673960972298/977405844562001940/unknown.png)
+
+This is the JUnit test I wrote (for both implementations) to test for Snippet 3. 
+- for my implementation, the test failed ![image](https://cdn.discordapp.com/attachments/808427673960972298/977406251728257064/unknown.png)
+- for their implementation, the test failed ![image](https://cdn.discordapp.com/attachments/808427673960972298/977406577604694046/unknown.png)
+
+To fix this bug, I think I would need to add some code that checked whether the text string within either has the new line character, and if it does, to set currentIndex to the character after the closest closing bracket or parentheses and continue. I'm not exactly sure how new lines work with Markdown, but I'm pretty sure that a long string of text that takes up more than one line doesn't contain any new lines. The code should check for the closest newline character after each index (openBracket, closeBracket, openParen), and if the index for the newline is before the next required character -- for example if there's a newline after the openBracket but before the closeBracket -- it should set currentIndex to the character after the new line and continue.
